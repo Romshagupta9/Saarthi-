@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Interview Prep</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body{
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: all 0.4s ease-in-out;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        h2 {
+            font-size: 36px;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 10px rgba(255, 235, 59, 0.6);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+        }
+        .parallax {
+            background: url('data:image/jpeg;base64,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') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: zoomEffect 10s infinite alternate ease-in-out;
+        }
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            filter: blur(30px); 
+        }
+        .parallax > div {
+            z-index: 2;
+        }
+        @keyframes zoomEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .section{
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); 
+            border-radius: 10px;
+            color: #cc2424; 
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn-view-more {
+            background: #ffeb3b;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-view-more:hover {
+            background: #ffd700;
+            box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+        }
+        .btn-container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div>HCL Interview Preparation</div>
+    </div>
+    <div class="container">
+        <h2>Aptitude Questions</h2>
+        <div class="section">Q1: Find the next number in the series: 2, 6, 12, 20, ?</div>
+        <div class="section">Q2: Solve: 15% of 400 + 25% of 600.</div>
+        <div class="section">Q3: A person travels 120 km in 3 hours. Find the average speed.</div>
+        <div class="section">Q4: What is the probability of drawing a face card from a deck of cards?</div>
+        <div class="section">Q5: Find the simple interest on $5000 at 4% for 5 years.</div>
+        <div class="section">Q6: Find the LCM of 18, 24, and 36.</div>
+        <div class="section">Q7: Solve for x: 2x - 3 = 7.</div>
+        <div class="section">Q8: Find the sum of the first 10 even numbers.</div>
+        <div class="section">Q9: A car moves at 60 km/hr for 4 hours. Find the distance covered.</div>
+        <div class="section">Q10: Find the HCF of 42, 56, and 70.</div>
+        <div class="section">Q11: Solve: (9 + 4) × (12 ÷ 3).</div>
+        <div class="section">Q12: Find the median of the numbers: 2, 8, 10, 4, 6.</div>
+        <div class="section">Q13: A person spends 20% of his salary on rent. Find his rent if his salary is $3000.</div>
+        <div class="section">Q14: Calculate the total cost if 6 items cost $25 each.</div>
+        <div class="section">Q15: Solve: (15² - 5²) ÷ 10.</div>
+            <div class="btn-container">
+            <a href="https://cpt.hitbullseye.com/facebook/facebook-aptitude-questions.php" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+        
+        <h2>Coding Questions</h2>
+        <div class="section">Q1: Reverse a string without using any built-in functions.</div>
+        <div class="section">Q2: Find the second largest element in an array.</div>
+        <div class="section">Q3: Implement binary search in a sorted array.</div>
+        <div class="section">Q4: Check if a string is a palindrome.</div>
+        <div class="section">Q5: Find the common elements in two sorted arrays.</div>
+        <div class="section">Q6: Find the first missing positive integer in an unsorted array.</div>
+        <div class="section">Q7: Implement a function to check if a given number is prime.</div>
+        <div class="section">Q8: Implement a function to find the factorial of a number.</div>
+        <div class="section">Q9: Merge two sorted arrays into a single sorted array.</div>
+        <div class="section">Q10: Find the longest substring without repeating characters in a string.</div>
+        <div class="section">Q11: Implement an algorithm to check if two strings are anagrams of each other.</div>
+        <div class="section">Q12: Implement a function to rotate an array by a given number of positions.</div>
+        <div class="section">Q13: Given an array, find the pair of elements whose sum is closest to a target value.</div>
+        <div class="section">Q14: Find the missing number in an array of n-1 integers from 1 to n.</div>
+        <div class="section">Q15: Write a program to find the maximum product of two integers in an array.</div>
+        <div class="section">Q16: Given an array of integers, find the subarray with the maximum sum.</div>
+        <div class="section">Q17: Write a program to implement a stack using two queues.</div>
+        <div class="section">Q18: Implement a queue using two stacks.</div>
+        <div class="section">Q19: Given a string, find the number of occurrences of each character.</div>
+        <div class="section">Q20: Write a program to check if a binary tree is balanced or not.</div>
+        <div class="btn-container">
+            <a href="https://www.bing.com/search?q=facebook%20coding%20questions&qs=n&form=QBRE&sp=-1&lq=0&pq=facebook%20coding%20questions&sc=9-25&sk=&cvid=9A905772DF7541A2A5A38D1779512B9B&ghsh=0&ghacc=0&ghpl=" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+
+        <h2>Facebook Interview Questions</h2>
+        <div class="section">Q1: Why do you want to work at Wipro?</div>
+        <div class="section">Q2: What are your strengths and weaknesses?</div>
+        <div class="section">Q3: Describe a time when you faced a challenge and how you handled it.</div>
+        <div class="section">Q4: How do you handle failure?</div>
+        <div class="section">Q5: Tell me about a time when you worked in a team.</div>
+        <div class="section">Q6: How do you prioritize your tasks?</div>
+        <div class="section">Q7: What motivates you to perform well at work?</div>
+        <div class="section">Q8: How do you handle constructive criticism?</div>
+        <div class="section">Q9: Where do you see yourself in five years?</div>
+        <div class="section">Q10: How do you adapt to a fast-paced work environment?</div>
+        <div class="section">Q11: Describe a time when you had a conflict with a colleague and how you resolved it.</div>
+        <div class="section">Q12: What do you know about Wipro’s culture?</div>
+        <div class="section">Q13: Why should we hire you for this role?</div>
+        <div class="section">Q14: How do you handle multiple priorities and tight deadlines?</div>
+        <div class="section">Q15: Do you have any questions for us?</div>
+        <div class="btn-container">
+            <a href="https://www.bing.com/search?q=facebook%20hr%20interview%20questions&qs=n&form=QBRE&sp=-1&lq=0&pq=facebook%20hr%20intervie%20questions&sc=12-30&sk=&cvid=536A0468EF104995B29AF97D6AF361FD&ghsh=0&ghacc=0&ghpl=" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

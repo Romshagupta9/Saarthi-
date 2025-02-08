@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Interview Prep</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: all 0.4s ease-in-out;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        h2 {
+            font-size: 36px;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 10px rgba(255, 235, 59, 0.6);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+        }
+        .parallax {
+            background: url('data:image/jpeg;base64,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') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: zoomEffect 10s infinite alternate ease-in-out;
+        }
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            filter: blur(30px); 
+        }
+        .parallax > div {
+            z-index: 2;
+        }
+        @keyframes zoomEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .section{
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); 
+            border-radius: 10px;
+            color: #cc2424; 
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn-view-more {
+            background: #ffeb3b;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-view-more:hover {
+            background: #ffd700;
+            box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+        }
+        .btn-container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div>Apple Interview Preparation</div>
+    </div>
+    <div class="container">
+        <h2>Aptitude Questions</h2>
+        <div class="section">Q1: Find the next number in the series: 3, 9, 18, 30, ?</div>
+        <div class="section">Q2: Solve: 20% of 600 + 30% of 500.</div>
+        <div class="section">Q3: A car travels 450 km in 9 hours. Find its average speed.</div>
+        <div class="section">Q4: Probability of drawing a red card from a deck of cards.</div>
+        <div class="section">Q5: Find the compound interest on $8000 at 6% for 3 years.</div>
+        <div class="section">Q6: Find the HCF of 56, 98, and 112.</div>
+        <div class="section">Q7: Solve for x: 3x + 5 = 20.</div>
+        <div class="section">Q8: Find the sum of the first 15 odd numbers.</div>
+        <div class="section">Q9: A train moves at 80 km/hr for 3 hours. Find the distance covered.</div>
+        <div class="section">Q10: Find the LCM of 24, 36, and 60.</div>
+        <div class="section">Q11: Solve: (12 + 6) × (15 ÷ 3).</div>
+        <div class="section">Q12: Find the median of the numbers: 1, 5, 7, 3, 9.</div>
+        <div class="section">Q13: A person spends 35% of his salary. Find his savings if salary is $4000.</div>
+        <div class="section">Q14: Calculate the total cost if 8 items cost $15 each.</div>
+        <div class="section">Q15: Solve: (16² - 8²) ÷ 8.</div>
+            <div class="btn-container">
+            <a href="https://gpuzzles.com/questions/interview/aptitude/apple-interview-puzzles-with-answers" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+        
+        <h2>Coding Questions</h2>
+        <div class="section">Q1: Find the longest palindrome in a given string.</div>
+        <div class="section">Q2: Implement LRU Cache.</div>
+        <div class="section">Q3: Find the kth smallest element in an array.</div>
+        <div class="section">Q4: Detect cycle in a linked list.</div>
+        <div class="section">Q5: Implement a Trie (Prefix Tree).</div>
+        <div class="section">Q6: Given an array, find the subarray with the maximum sum.</div>
+        <div class="section">Q7: Implement Dijkstra’s algorithm for shortest path.</div>
+        <div class="section">Q8: Find the median of two sorted arrays.</div>
+        <div class="section">Q9: Implement a queue using stacks.</div>
+        <div class="section">Q10: Check if a given string is a valid anagram.</div>
+        <div class="section">Q11: Reverse a linked list.</div>
+        <div class="section">Q12: Find the intersection of two linked lists.</div>
+        <div class="section">Q13: Implement an N-Queens solver.</div>
+        <div class="section">Q14: Convert a binary tree to a doubly linked list.</div>
+        <div class="section">Q15: Find the lowest common ancestor of two nodes in a BST.</div>
+        <div class="section">Q16: Merge two sorted linked lists.</div>
+        <div class="section">Q17: Implement a Min Stack.</div>
+        <div class="section">Q18: Find the first non-repeating character in a string.</div>
+        <div class="section">Q19: Rotate an array by k positions.</div>
+        <div class="section">Q20: Implement a binary search algorithm.</div>
+        <div class="btn-container">
+            <a href="https://www.educative.io/blog/apple-coding-interview-questions" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+
+        <h2>HR Interview Questions</h2>
+            <div class="section">Q1: Tell me about yourself.</div>
+        <div class="section">Q2: Why do you want to work at Apple?</div>
+        <div class="section">Q3: What are your strengths and weaknesses?</div>
+        <div class="section">Q4: Describe a time you faced a challenge and how you handled it.</div>
+        <div class="section">Q5: How do you handle failure?</div>
+        <div class="section">Q6: Tell me about a time you worked in a team.</div>
+        <div class="section">Q7: How do you prioritize your tasks?</div>
+        <div class="section">Q8: What motivates you to perform well at work?</div>
+        <div class="section">Q9: How do you handle constructive criticism?</div>
+        <div class="section">Q10: Where do you see yourself in five years?</div>
+        <div class="section">Q11: How do you adapt to a fast-paced work environment?</div>
+        <div class="section">Q12: Describe a time when you had a conflict with a colleague.</div>
+        <div class="section">Q13: What do you know about Apple’s culture?</div>
+        <div class="section">Q14: What makes you a good fit for this role?</div>
+        <div class="section">Q15: Do you have any questions for me?</div>
+        <div class="btn-container">
+            <a href="https://www.techtest.io/magazine/top-apple-interview-questions-with-sample-answers/" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
