@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Interview Prep</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: all 0.4s ease-in-out;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        h2 {
+            font-size: 36px;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 10px rgba(255, 235, 59, 0.6);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+        }
+        .parallax {
+            background: url('https://th.bing.com/th/id/OIP.XkcKROWEdqonIf2IonKNMAHaEK?w=293&h=180&c=7&r=0&o=5&pid=1.7') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: zoomEffect 10s infinite alternate ease-in-out;
+        }
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            filter: blur(30px); 
+        }
+        .parallax > div {
+            z-index: 2;
+        }
+        @keyframes zoomEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .section{
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); 
+            border-radius: 10px;
+            color: #cc2424; 
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn-view-more {
+            background: #ffeb3b;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-view-more:hover {
+            background: #ffd700;
+            box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+        }
+        .btn-container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div>Amazon Interview Preparation</div>
+    </div>
+    <div class="container">
+        <h2>Aptitude Questions</h2>
+        <div class="section">Q1: Find the missing number in the series: 5, 10, ?, 30, 50.</div>
+        <div class="section">Q2: A train crosses a pole in 10 seconds. Find its speed.</div>
+        <div class="section">Q3: Solve: (2/5) of 300 + 15% of 200.</div>
+        <div class="section">Q4: Probability of rolling a sum of 8 with two dice.</div>
+        <div class="section">Q5: Find the compound interest on $5000 at 5% for 2 years.</div>
+        <div class="section">Q6: Find the angle between the hour and minute hands at 3:15.</div>
+        <div class="section">Q7: Solve for x: 3x + 5 = 20.</div>
+        <div class="section">Q8: Find the average of first 10 natural numbers.</div>
+        <div class="section">Q9: A car covers 150 km in 3 hours. Find speed.</div>
+        <div class="section">Q10: Find the LCM of 12, 15, and 20.</div>
+        <div class="section">Q11: Solve: 48 ÷ 8 + 6 × 2.</div>
+        <div class="section">Q12: Find the number of prime numbers between 1 to 50.</div>
+        <div class="section">Q13: A man spends 20% of his salary. Find savings if salary is $2000.</div>
+        <div class="section">Q14: Calculate the time taken to fill a tank with two taps.</div>
+        <div class="section">Q15: Solve: 45% of 800.</div>
+        <div class="btn-container">
+            <a href="https://cpt.hitbullseye.com/Amazon-Aptitude-Questions.php" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+        
+        <h2>Coding Questions</h2>
+        <div class="section">Q1: Reverse a linked list iteratively.</div>
+        <div class="section">Q2: Find the missing number in an array of 1 to N.</div>
+        <div class="section">Q3: Find if a string is an anagram of another string.</div>
+        <div class="section">Q4: Implement binary search in an array.</div>
+        <div class="section">Q5: Find the first non-repeating character in a string.</div>
+        <div class="section">Q6: Find the middle element of a linked list.</div>
+        <div class="section">Q7: Implement merge sort algorithm.</div>
+        <div class="section">Q8: Find the largest subarray with 0 sum.</div>
+        <div class="section">Q9: Implement a queue using two stacks.</div>
+        <div class="section">Q10: Determine if a number is prime.</div>
+        <div class="section">Q11: Find the longest common prefix among a list of strings.</div>
+        <div class="section">Q12: Find the diameter of a binary tree.</div>
+        <div class="section">Q13: Implement a stack with push, pop, and min operations in O(1) time.</div>
+        <div class="section">Q14: Check if a linked list has a cycle.</div>
+        <div class="section">Q15: Implement depth-first search (DFS) on a graph.</div>
+        <div class="section">Q16: Find the intersection of two sorted arrays.</div>
+        <div class="section">Q17: Implement a LRU (Least Recently Used) cache.</div>
+        <div class="section">Q18: Detect and remove a loop in a linked list.</div>
+        <div class="section">Q19: Convert a binary tree to a doubly linked list.</div>
+        <div class="section">Q20: Find the shortest path in an unweighted graph using BFS.</div>
+        <div class="btn-container">
+            <a href="https://www.geeksforgeeks.org/amazon-interview-questions/" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+        
+        <h2>HR Interview Questions</h2>
+        <div class="section">Q1: Tell me about yourself.</div>
+        <div class="section">Q2: What are your strengths and weaknesses?</div>
+        <div class="section">Q3: Why do you want to work at Amazon?</div>
+        <div class="section">Q4: Describe a challenging project you worked on.</div>
+        <div class="section">Q5: How do you handle workplace conflict?</div>
+        <div class="section">Q6: Give an example of a time you took initiative.</div>
+        <div class="section">Q7: How do you handle feedback?</div>
+        <div class="section">Q8: Describe a time you failed and how you handled it.</div>
+        <div class="section">Q9: What leadership principle of Amazon do you connect with?</div>
+        <div class="section">Q10: Where do you see yourself in five years?</div>
+        <div class="section">Q11: How do you manage tight deadlines?</div>
+        <div class="section">Q12: What do you do when you disagree with a team member?</div>
+        <div class="section">Q13: What motivates you?</div>
+        <div class="section">Q14: Why should we hire you?</div>
+        <div class="section">Q15: Do you have any questions for us?</div>
+        <div class="btn-container">
+            <a href="https://www.scholarhat.com/tutorial/interview/amazon-interview-questions" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
