@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Interview Prep</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: all 0.4s ease-in-out;
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        h2 {
+            font-size: 36px;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 10px rgba(255, 235, 59, 0.6);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+        }
+        .parallax {
+            background: url('data:image/jpeg;base64,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') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: zoomEffect 10s infinite alternate ease-in-out;
+        }
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            filter: blur(30px); 
+        }
+        .parallax > div {
+            z-index: 2;
+        }
+        @keyframes zoomEffect {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .section{
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4); 
+            border-radius: 10px;
+            color: #cc2424; 
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .btn-view-more {
+            background: #ffeb3b;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-view-more:hover {
+            background: #ffd700;
+            box-shadow: 0px 0px 10px rgba(255, 235, 59, 0.8);
+        }
+        .btn-container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div>Microsoft Interview Preparation</div>
+    </div>
+    <div class="container">
+        <h2>Aptitude Questions</h2>
+        <div class="section">Q1: Find the next number in the series: 1, 4, 9, 16, ?</div>
+        <div class="section">Q2: Solve: 30% of 600 + 20% of 300.</div>
+        <div class="section">Q3: A car covers 240 km in 4 hours. Find its speed.</div>
+        <div class="section">Q4: Probability of rolling a 3 on a fair dice.</div>
+        <div class="section">Q5: Find the simple interest on $4000 at 6% for 3 years.</div>
+        <div class="section">Q6: Find the HCF of 56, 84, and 112.</div>
+        <div class="section">Q7: Solve for x: 3x + 5 = 20.</div>
+        <div class="section">Q8: Find the sum of first 5 prime numbers.</div>
+        <div class="section">Q9: A train travels at 80 km/hr for 3 hours. Find distance covered.</div>
+        <div class="section">Q10: Find the LCM of 20, 30, and 40.</div>
+        <div class="section">Q11: Solve: (12 + 8) × (15 ÷ 3).</div>
+        <div class="section">Q12: Find the median of the numbers: 11, 15, 3, 7, 9.</div>
+        <div class="section">Q13: A man spends 25% of his salary. Find savings if salary is $6000.</div>
+        <div class="section">Q14: Calculate the total cost if 6 items cost $15 each.</div>
+        <div class="section">Q15: Solve: (7² - 3²) ÷ 4.</div>
+            <div class="btn-container">
+            <a href="https://cpt.hitbullseye.com/Microsoft-Aptitude-Questions.php" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+        
+        <h2>Coding Questions</h2>
+        <div class="section">Q1: Find the longest palindrome in a given string.</div>
+        <div class="section">Q2: Implement LRU Cache.</div>
+        <div class="section">Q3: Find the kth smallest element in an array.</div>
+        <div class="section">Q4: Detect cycle in a linked list.</div>
+        <div class="section">Q5: Implement a Trie (Prefix Tree).</div>
+        <div class="section">Q6: Given an array, find the subarray with the maximum sum.</div>
+        <div class="section">Q7: Implement Dijkstra’s algorithm for shortest path.</div>
+        <div class="section">Q8: Find the median of two sorted arrays.</div>
+        <div class="section">Q9: Implement a queue using stacks.</div>
+        <div class="section">Q10: Check if a given string is a valid anagram.</div>
+        <div class="section">Q11: Reverse a linked list.</div>
+        <div class="section">Q12: Find the intersection of two linked lists.</div>
+        <div class="section">Q13: Implement an N-Queens solver.</div>
+        <div class="section">Q14: Convert a binary tree to a doubly linked list.</div>
+        <div class="section">Q15: Find the lowest common ancestor of two nodes in a BST.</div>
+        <div class="section">Q16: Merge two sorted linked lists.</div>
+        <div class="section">Q17: Implement a Min Stack.</div>
+        <div class="section">Q18: Find the first non-repeating character in a string.</div>
+        <div class="section">Q19: Rotate an array by k positions.</div>
+        <div class="section">Q20: Implement a binary search algorithm.</div>
+        <div class="btn-container">
+            <a href="https://leetcode.com/problem-list/55vr69d7/" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+
+        <h2>HR Interview Questions</h2>
+        <div class="section">Q1: Tell me about yourself.</div>
+        <div class="section">Q2: Why do you want to work at Microsoft?</div>
+        <div class="section">Q3: What are your strengths and weaknesses?</div>
+        <div class="section">Q4: Describe a time you faced a challenge and how you handled it.</div>
+        <div class="section">Q5: How do you handle failure?</div>
+        <div class="section">Q6: Tell me about a time you worked in a team.</div>
+        <div class="section">Q7: How do you prioritize your tasks?</div>
+        <div class="section">Q8: What motivates you to perform well at work?</div>
+        <div class="section">Q9: How do you handle constructive criticism?</div>
+        <div class="section">Q10: Where do you see yourself in five years?</div>
+        <div class="section">Q11: How do you adapt to a fast-paced work environment?</div>
+        <div class="section">Q12: Describe a time when you had a conflict with a colleague.</div>
+        <div class="section">Q13: What do you know about Microsoft’s culture?</div>
+        <div class="section">Q14: What makes you a good fit for this role?</div>
+        <div class="section">Q15: Do you have any questions for me?</div>
+        <div class="btn-container">
+            <a href="https://www.freshersnow.com/microsoft-interview-questions/" target="_blank">
+                <button class="btn-view-more">View More</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
